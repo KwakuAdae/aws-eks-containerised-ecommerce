@@ -1,0 +1,16 @@
+# A Service of type LoadBalancer gives customers one public address for all the pods.
+# On EKS, AWS creates a load balancer for it automatically.
+apiVersion: v1
+kind: Service
+metadata:
+  name: kwaku-store-service
+  namespace: kwaku-store
+spec:
+  type: LoadBalancer
+  selector:
+    app: kwaku-store
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80

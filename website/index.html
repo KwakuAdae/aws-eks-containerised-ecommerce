@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwaku Online Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">KWAKU<span>STORE</span></div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <button id="cart-button" type="button">
+      🛒 Cart (<span id="cart-count">0</span>)
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="tag">☸️ Running on Amazon EKS</p>
+    <h1>Great products, always online.</h1>
+    <p>Shop headphones, watches, cameras and more. Our store runs on Kubernetes, so it stays up even when something fails.</p>
+    <a class="hero-button" href="#products">Shop now</a>
+  </div>
+  <div class="hero-badges">
+    <div>🔁 <strong>3 replicas</strong><br>self-healing pods</div>
+    <div>📈 <strong>Autoscaling</strong><br>3 to 6 pods</div>
+    <div>📊 <strong>Monitored</strong><br>Amazon CloudWatch</div>
+  </div>
+</section>
+
+<main>
+  <section id="products">
+    <h2>Featured products</h2>
+    <div id="product-grid" class="product-grid"></div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Kwaku Online Store</h2>
+    <p>
+      Kwaku Online Store is a growing e-commerce business. This website is a demonstration:
+      the shopping cart lives in your browser and no real orders or payments are processed.
+      It is packaged as a Docker container, stored in Amazon ECR and served by several
+      Kubernetes pods on Amazon EKS behind an AWS load balancer.
+    </p>
+  </section>
+</main>
+
+<aside id="cart-panel" class="cart-panel" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Your cart</h2>
+    <button id="close-cart" type="button" aria-label="Close cart">✕</button>
+  </div>
+  <ul id="cart-items"></ul>
+  <p class="cart-total">Total: <strong id="cart-total">£0.00</strong></p>
+  <button id="checkout-button" type="button" class="checkout">Checkout</button>
+  <p id="checkout-message" class="checkout-message"></p>
+</aside>
+
+<footer>
+  © Kwaku Online Store · Containerised with Docker · Orchestrated by Kubernetes on Amazon EKS
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

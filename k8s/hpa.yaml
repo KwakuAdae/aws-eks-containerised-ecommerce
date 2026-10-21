@@ -1,0 +1,21 @@
+# Horizontal Pod Autoscaler: keep average CPU around 50% of the requested CPU
+# by running between 3 and 6 website pods.
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: kwaku-store-hpa
+  namespace: kwaku-store
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: kwaku-store
+  minReplicas: 3
+  maxReplicas: 6
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50
