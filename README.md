@@ -595,7 +595,7 @@ kubectl get pods -n kwaku-store -w
 
 The deleted pod shows `Terminating`, and a **new pod** with a new name appears and becomes `Running`. Press `Ctrl + C` to stop watching.
 
-**What you have demonstrated:** Kubernetes automatically replaces failed or deleted application pods, so nobody has to restart the application by hand. 📸 *Screenshot: the old pod terminating and the new pod becoming ready.*
+**What you have demonstrated:** Kubernetes automatically replaces failed or deleted application pods, so nobody has to restart the application by hand. 
 
 ### Part 9: Configure autoscaling
 
