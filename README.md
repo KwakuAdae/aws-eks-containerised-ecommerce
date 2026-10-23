@@ -348,7 +348,7 @@ aws ecr describe-images \
   --region "$AWS_REGION"
 ```
 
-You can also open the console: **Elastic Container Registry → Repositories → kwaku-store**. 📸 *Screenshot: the `v1` image in ECR.*
+You can also open the console: **Elastic Container Registry → Repositories → kwaku-store**. 
 
 ### Part 5: Create the EKS cluster
 
@@ -483,7 +483,7 @@ kubectl rollout status \
   --timeout=10m
 ```
 
-You should see **three running pods**, spread over the two nodes. 📸 *Screenshot: `kubectl get pods -n kwaku-store -o wide`.*
+You should see **three running pods**, spread over the two nodes. 
 
 ### Part 7: Make the website accessible to customers
 
@@ -535,7 +535,7 @@ export STORE_URL=$(kubectl get svc \
 echo "http://${STORE_URL}"
 ```
 
-Open the displayed URL in your browser. You should see **Kwaku Online Store** with its products and shopping cart. If it does not load yet, wait 2-3 minutes for DNS. 📸 *Screenshot: the store in your browser.*
+Open the displayed URL in your browser. You should see **Kwaku Online Store** with its products and shopping cart. If it does not load yet, wait 2-3 minutes for DNS. 
 
 > This project uses HTTP for simplicity. A production e-commerce website needs HTTPS, a domain name and more security controls.
 
@@ -710,7 +710,7 @@ After 1-2 minutes, the CPU target should climb above 50% and the HPA should requ
 kubectl get pods -n kwaku-store -l app=kwaku-store -w
 ```
 
-📸 *Screenshot: `kubectl get hpa` showing more than 3 replicas.*
+
 
 > **Important:**
 > - **If the CPU stays below 50%:** add more load with `kubectl scale deployment load-generator -n kwaku-store --replicas=6`.
